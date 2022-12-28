@@ -39,14 +39,15 @@ export class App extends Component {
       countTotalFeedback,
       countPositiveFeedbackPercentage,
     } = this;
-    const keys = Object.values(this.state);
+    const keysValues = Object.values(this.state);
     // console.log(keys);
-    const count = keys.reduce((acc, num) => acc + num, 0);
+    const count = keysValues.reduce((acc, num) => acc + num, 0);
     // console.log(count);
+    const keysKeys = Object.keys(state);
     return (
       <>
         <Section title="Please leave feedback">
-          <FeedbackOptions options={state} onLeaveFeedback={handleClick} />
+          <FeedbackOptions keysKeys={keysKeys} onLeaveFeedback={handleClick} />
           {/* {good !== 0 || neutral !== 0 || bad !== 0 ? ( */}
           {count !== 0 ? (
             <Statistics
